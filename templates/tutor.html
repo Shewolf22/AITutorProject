@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Tutor Chat</title>
+  <style>
+    body { background-color: #e6f7ff; font-family: Arial, sans-serif; }
+    .container { max-width: 700px; margin: auto; padding: 20px; }
+    label, select, textarea, input[type="submit"] { display: block; width: 100%; margin: 10px 0; }
+    textarea { padding: 10px; height: 100px; }
+    input[type="submit"] { padding: 10px; background-color: #1e90ff; color: white; border: none; cursor: pointer; }
+    .response { background-color: #f0f0f0; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ask Your Python Tutor</h2>
+    <form method="post">
+      <label for="tutor_character">Choose Your Tutor Character:</label>
+      <select name="tutor_character" id="tutor_character" required>
+        <option value="Captain Code">MrBeast Code</option>
+        <option value="Professor Python">Python Minecraft</option>
+        <option value="Wizard of Widgets">Pokemon of Widgets</option>
+      </select>
+      <label for="question">Your Python Question:</label>
+      <textarea name="question" id="question" placeholder="Type your question here..." required>{{ question }}</textarea>
+      <input type="submit" value="Ask">
+    </form>
+    {% if response %}
+      <h3>Response:</h3>
+      <div class="response">{{ response }}</div>
+    {% endif %}
+    <p><a href="/">Back to Home</a></p>
+  </div>
+</body>
+</html>
